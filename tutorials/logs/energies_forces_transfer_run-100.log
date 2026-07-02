@@ -1,0 +1,55 @@
+2026-07-01 10:56:15.959 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 10:56:15.959 INFO: MACE version: 0.3.6
+2026-07-01 10:56:16.005 INFO: CUDA version: 11.8, CUDA device: 0
+2026-07-01 10:56:16.046 INFO: Using foundation model mace-off-2023 medium as initial checkpoint. ASL license.
+2026-07-01 10:56:19.606 INFO: CUDA version: 11.8, CUDA device: 0
+2026-07-01 10:56:19.612 INFO: 
+2026-07-01 10:56:19.612 INFO: ===========LOADING INPUT DATA===========
+2026-07-01 10:56:19.778 INFO: Using random 10% of training set for validation with following indices: [39, 47, 4, 43, 24]
+2026-07-01 10:56:19.778 WARNING: Validation batch size (10) is larger than the number of validation data (5)
+2026-07-01 10:56:19.779 INFO: Atomic Numbers used: [np.int64(1)]
+2026-07-01 10:56:19.779 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-07-01 10:56:19.779 INFO: Computing average Atomic Energies using least squares regression
+2026-07-01 10:56:19.779 INFO: Atomic Energies used (z: eV): {1: -1003.9330823714266}
+2026-07-01 10:56:19.808 INFO: 
+2026-07-01 10:56:19.808 INFO: ===========MODEL DETAILS===========
+2026-07-01 10:56:19.820 INFO: Average number of neighbors: 15.6
+2026-07-01 10:56:19.820 INFO: During training the following quantities will be reported: energy, forces, dipoles, nacs
+2026-07-01 10:56:19.830 INFO: Building model
+2026-07-01 10:56:19.830 INFO: Message passing with 128 channels and max_L=1 (128x0e + 128x1o)
+2026-07-01 10:56:19.830 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-07-01 10:56:19.830 INFO: 8 radial and 5 basis functions
+2026-07-01 10:56:19.830 INFO: Radial cutoff: 5.0 Å (total receptive field for each atom: 10.0 Å)
+2026-07-01 10:56:19.830 INFO: Distance transform for radial basis functions: None
+2026-07-01 10:56:21.376 INFO: Total number of parameters: 573832
+2026-07-01 10:56:21.377 INFO: 
+2026-07-01 10:56:21.377 INFO: ===========OPTIMIZER INFORMATION===========
+2026-07-01 10:56:21.377 INFO: Using ADAM as parameter optimizer
+2026-07-01 10:56:21.377 INFO: Batch size: 10
+2026-07-01 10:56:21.377 INFO: Using Exponential Moving Average with decay: 0.99
+2026-07-01 10:56:21.377 INFO: Number of gradient updates: 450
+2026-07-01 10:56:21.377 INFO: Learning rate: 0.0001, weight decay: 5e-07
+2026-07-01 10:56:21.377 INFO: WeightedEnergyForcesNacsDipoleLoss(energy_weight=100.000, forces_weight=1.000, dipole_weight=1.000)
+2026-07-01 10:56:21.379 INFO: Using gradient clipping with tolerance=10.000
+2026-07-01 10:56:21.379 INFO: 
+2026-07-01 10:56:21.379 INFO: ===========TRAINING===========
+2026-07-01 10:56:21.379 INFO: Started training, reporting errors on validation set
+2026-07-01 10:56:21.379 INFO: Loss metrics on validation set
+2026-07-01 10:57:53.312 INFO: Training complete
+2026-07-01 10:57:53.312 INFO: 
+2026-07-01 10:57:53.312 INFO: ===========RESULTS===========
+2026-07-01 10:57:53.312 INFO: Computing metrics for training, validation, and test sets
+2026-07-01 10:57:53.313 INFO: Loading checkpoint: ./checkpoints/energies_forces_transfer_run-100_epoch-23.pt
+2026-07-01 10:57:53.366 INFO: Loaded Stage one model from epoch 23 for evaluation
+2026-07-01 10:57:53.366 INFO: Evaluating train ...
+2026-07-01 10:57:53.812 INFO: Evaluating valid ...
+2026-07-01 10:57:53.952 INFO: Error-table on TRAIN and VALID:
++-------------+----------+----------+----------+----------+
+| config_type |  MAE E   |  MAE F   | MAE nacs | MAE socs |
++-------------+----------+----------+----------+----------+
+|    train    |    612.9 |   3795.0 |      N/A |      N/A |
+|    valid    |    509.8 |   3690.7 |      N/A |      N/A |
++-------------+----------+----------+----------+----------+
+2026-07-01 10:57:53.952 INFO: Saving model to checkpoints/energies_forces_transfer_run-100.model
+2026-07-01 10:57:54.031 INFO: Compiling model, saving metadata to energies_forces_transfer_compiled.model
+2026-07-01 10:57:54.506 INFO: Done

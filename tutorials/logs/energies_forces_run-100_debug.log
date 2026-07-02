@@ -1,0 +1,1485 @@
+2026-07-01 09:52:12.410 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 09:52:12.410 INFO: MACE version: 0.3.6
+2026-07-01 09:52:12.410 DEBUG: Configuration: Namespace(name='energies_forces', seed=100, work_dir='.', nacs_key='smooth_nacs', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, log_level='INFO', n_energies=4, error_table='EnergyNacsDipoleMAE', model='AutoencoderExcitedMACE', r_max=5.0, num_permutational_invariant=16, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='128x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_dipoles=True, compute_nacs=False, compute_socs=False, train_file='SINGLET_SOC_ALL.xyz', valid_file=None, valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipoles_key='REF_dipoles', charges_key='REF_charges', loss='weighted', forces_weight=100.0, nacs_weight=100.0, socs_weight=100.0, soc_num=None, nac_num=None, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipoles_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.0001, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, ema=True, ema_decay=0.99, max_num_epochs=100, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'])
+2026-07-01 10:17:00.888 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 10:17:00.888 INFO: MACE version: 0.3.6
+2026-07-01 10:17:00.888 DEBUG: Configuration: Namespace(name='energies_forces', seed=100, work_dir='.', nacs_key='smooth_nacs', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, log_level='INFO', n_energies=4, error_table='EnergyNacsDipoleMAE', model='AutoencoderExcitedMACE', r_max=5.0, num_permutational_invariant=16, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='128x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_dipoles=True, compute_nacs=False, compute_socs=False, train_file='SINGLET_SOC_ALL.xyz', valid_file=None, valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipoles_key='REF_dipoles', charges_key='REF_charges', loss='weighted', forces_weight=100.0, nacs_weight=100.0, socs_weight=100.0, soc_num=None, nac_num=None, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipoles_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.0001, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, ema=True, ema_decay=0.99, max_num_epochs=100, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'])
+2026-07-01 10:30:23.627 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 10:30:23.627 INFO: MACE version: 0.3.6
+2026-07-01 10:30:23.627 DEBUG: Configuration: Namespace(name='energies_forces', seed=100, work_dir='.', nacs_key='smooth_nacs', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, log_level='INFO', n_energies=4, error_table='EnergyNacsDipoleMAE', model='AutoencoderExcitedMACE', r_max=5.0, num_permutational_invariant=16, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='128x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_dipoles=True, compute_nacs=False, compute_socs=False, train_file='SINGLET_SOC_ALL.xyz', valid_file=None, valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipoles_key='REF_dipoles', charges_key='REF_charges', loss='weighted', forces_weight=100.0, nacs_weight=100.0, socs_weight=100.0, soc_num=None, nac_num=None, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipoles_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.0001, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, ema=True, ema_decay=0.99, max_num_epochs=100, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'])
+2026-07-01 10:36:16.349 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 10:36:16.349 INFO: MACE version: 0.3.6
+2026-07-01 10:36:16.350 DEBUG: Configuration: Namespace(name='energies_forces', seed=100, work_dir='.', nacs_key='smooth_nacs', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, log_level='INFO', n_energies=4, error_table='EnergyNacsDipoleMAE', model='AutoencoderExcitedMACE', r_max=5.0, num_permutational_invariant=16, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='128x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_dipoles=True, compute_nacs=False, compute_socs=False, train_file='SINGLET_SOC_ALL.xyz', valid_file=None, valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipoles_key='REF_dipoles', charges_key='REF_charges', loss='weighted', forces_weight=100.0, nacs_weight=100.0, socs_weight=100.0, soc_num=None, nac_num=None, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipoles_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.0001, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, ema=True, ema_decay=0.99, max_num_epochs=100, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'])
+2026-07-01 10:36:16.398 INFO: CUDA version: 11.8, CUDA device: 0
+2026-07-01 10:36:16.443 DEBUG: Popen(['git', 'version'], cwd=/home/yutong/X-MACE/tutorials, stdin=None, shell=False, universal_newlines=False)
+2026-07-01 10:36:16.448 DEBUG: Popen(['git', 'version'], cwd=/home/yutong/X-MACE/tutorials, stdin=None, shell=False, universal_newlines=False)
+2026-07-01 10:36:16.450 DEBUG: sys.platform='linux', git_executable='git'
+2026-07-01 10:36:16.451 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/yutong/X-MACE, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-07-01 10:36:16.453 DEBUG: Current Git commit: ef57fb0b2c0da701ab86dbcc086af1946e7e8ee1
+2026-07-01 10:36:16.453 INFO: 
+2026-07-01 10:36:16.453 INFO: ===========LOADING INPUT DATA===========
+2026-07-01 10:36:16.634 INFO: Using random 10% of training set for validation with following indices: [39, 47, 4, 43, 24]
+2026-07-01 10:36:16.635 WARNING: Validation batch size (10) is larger than the number of validation data (5)
+2026-07-01 10:36:16.636 INFO: Atomic Numbers used: [np.int64(1)]
+2026-07-01 10:36:16.636 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-07-01 10:36:16.636 INFO: Computing average Atomic Energies using least squares regression
+2026-07-01 10:36:16.639 INFO: Atomic Energies used (z: eV): {1: -1003.9330823714266}
+2026-07-01 10:36:16.668 INFO: 
+2026-07-01 10:36:16.668 INFO: ===========MODEL DETAILS===========
+2026-07-01 10:36:18.257 INFO: Average number of neighbors: 15.6
+2026-07-01 10:36:18.257 INFO: During training the following quantities will be reported: energy, forces, dipoles, nacs
+2026-07-01 10:36:18.267 INFO: Building model
+2026-07-01 10:36:18.267 INFO: Message passing with 128 channels and max_L=1 (128x0e + 128x1o)
+2026-07-01 10:36:18.267 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-07-01 10:36:18.267 INFO: 8 radial and 5 basis functions
+2026-07-01 10:36:18.267 INFO: Radial cutoff: 5.0 Å (total receptive field for each atom: 10.0 Å)
+2026-07-01 10:36:18.267 INFO: Distance transform for radial basis functions: None
+2026-07-01 10:36:19.727 DEBUG: AutoencoderExcitedMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(1x0e -> 128x0e | 128 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=5.0, num_basis=8, trainable=False)
+    (cutoff_fn): PolynomialCutoff(p=5.0, r_max=5.0)
+  )
+  (perm_encoder): PermutationInvariantEncoder(
+    (elementwise_nn): Sequential(
+      (0): Linear(in_features=1, out_features=16, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=16, out_features=16, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=16, out_features=16, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=16, out_features=16, bias=True)
+      (7): ELU(alpha=1.0)
+    )
+    (post_aggregation_nn): Sequential(
+      (0): Linear(in_features=16, out_features=16, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=16, out_features=16, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=16, out_features=16, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=16, out_features=16, bias=True)
+    )
+  )
+  (perm_decoder): PermutationInvariantDecoder(
+    (decoder_nn): Sequential(
+      (0): Linear(in_features=16, out_features=128, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=128, out_features=128, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=128, out_features=128, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=128, out_features=128, bias=True)
+      (7): ELU(alpha=1.0)
+      (8): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[-1003.9331])
+  (interactions): ModuleList(
+    (0): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e x 1x0e -> 128x0e+128x1o | 16384 paths | 16384 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o -> 128x0e+128x1o | 32768 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o x 1x0e+1x1o+1x2e+1x3o -> 256x0e+384x1o+384x2e+256x3o | 1280 paths | 1280 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 1280]
+      (linear): Linear(256x0e+384x1o+384x2e+256x3o -> 128x0e+128x1o+128x2e+128x3o | 163840 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o x 1x0e -> 128x0e | 16384 paths | 16384 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o -> 128x0e+128x1o | 32768 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e -> 128x0e | 16384 weights)
+    )
+  )
+  (socs_readouts): ModuleList(
+    (0-1): 2 x None
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o -> 4x0e | 512 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 128x0e | 16384 weights)
+      (non_linearity): Activation [x] (128x0e -> 128x0e)
+      (linear_2): Linear(128x0e -> 4x0e | 512 weights)
+    )
+  )
+  (invariant_readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o -> 16x0e | 2048 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 128x0e | 16384 weights)
+      (non_linearity): Activation [x] (128x0e -> 128x0e)
+      (linear_2): Linear(128x0e -> 16x0e | 2048 weights)
+    )
+  )
+)
+2026-07-01 10:36:19.730 INFO: Total number of parameters: 599703
+2026-07-01 10:36:19.730 INFO: 
+2026-07-01 10:36:19.730 INFO: ===========OPTIMIZER INFORMATION===========
+2026-07-01 10:36:19.730 INFO: Using ADAM as parameter optimizer
+2026-07-01 10:36:19.730 INFO: Batch size: 10
+2026-07-01 10:36:19.730 INFO: Using Exponential Moving Average with decay: 0.99
+2026-07-01 10:36:19.730 INFO: Number of gradient updates: 450
+2026-07-01 10:36:19.730 INFO: Learning rate: 0.0001, weight decay: 5e-07
+2026-07-01 10:36:19.730 INFO: InvariantsWeightedEnergyForcesNacsDipoleLoss(energy_weight=100.000, forces_weight=100.000, dipole_weight=1.000)
+2026-07-01 10:36:19.732 INFO: Using gradient clipping with tolerance=10.000
+2026-07-01 10:36:19.732 INFO: 
+2026-07-01 10:36:19.732 INFO: ===========TRAINING===========
+2026-07-01 10:36:19.732 INFO: Started training, reporting errors on validation set
+2026-07-01 10:36:19.732 INFO: Loss metrics on validation set
+2026-07-01 10:36:21.026 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:24.648 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:29.633 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:34.966 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:36.281 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:36.396 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:36.401 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-0.pt
+2026-07-01 10:36:36.645 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:36.856 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:37.080 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:37.287 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:37.393 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:37.589 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:37.792 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.000 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.213 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.317 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.515 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.718 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:38.925 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:39.126 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:39.230 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:39.428 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:39.630 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:39.846 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.049 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.166 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.363 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.558 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.760 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:40.963 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.070 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.276 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.481 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.682 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.887 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:41.995 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:42.200 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:42.396 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:42.602 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:42.808 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:42.917 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:43.113 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:43.315 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:43.523 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:43.727 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:43.835 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.031 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.226 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.427 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.636 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.746 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:44.950 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:45.150 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:45.365 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:45.587 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:45.695 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:45.905 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:46.108 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:46.317 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:46.521 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:46.626 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:46.824 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.027 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.225 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.431 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.538 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.742 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:47.948 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:48.149 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:48.357 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:48.477 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:48.677 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:48.873 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.073 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.277 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.384 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.581 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.783 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:49.986 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:50.188 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:50.306 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:50.506 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:50.717 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:50.920 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:51.121 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:51.227 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:51.423 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:51.619 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:51.819 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.034 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.139 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.336 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.538 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.759 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:52.966 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.071 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.268 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.475 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.683 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.886 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:53.994 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:54.189 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:54.392 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:54.593 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:54.798 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:54.904 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:55.108 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:55.317 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:55.538 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:55.750 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:55.858 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.061 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.267 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.467 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.681 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.788 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:56.992 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:57.210 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:57.416 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:57.637 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:57.742 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:57.959 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:58.171 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:58.373 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:58.586 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:58.694 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:58.896 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:59.101 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:59.305 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:59.510 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:59.615 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:36:59.818 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.023 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.229 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.438 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.561 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.761 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:00.960 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:01.160 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:01.376 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:01.483 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:01.685 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:01.891 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.091 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.297 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.402 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.597 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.799 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:02.999 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:03.207 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:03.316 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:03.513 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:03.720 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:03.927 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:04.138 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:04.242 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:04.443 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:04.644 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:04.844 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:05.048 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:05.156 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:05.353 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:05.576 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:05.802 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.013 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.121 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.322 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.530 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.738 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:06.948 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.057 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.261 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.460 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.666 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.865 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:07.978 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:08.177 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:08.382 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:08.581 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:08.788 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:08.894 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:09.091 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:09.295 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:09.499 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:09.700 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:09.809 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.007 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.213 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.423 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.630 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.763 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:10.979 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:11.177 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:11.382 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:11.591 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:11.698 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:11.895 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:12.107 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:12.312 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:12.525 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:12.632 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:12.838 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:13.045 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:13.259 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:13.470 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:13.580 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:13.783 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.004 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.215 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.418 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.524 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.721 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:14.922 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:15.127 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:15.338 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:15.449 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:15.645 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:15.878 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:16.082 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:16.284 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:16.404 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:16.617 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:16.814 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.016 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.229 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.336 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.532 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.728 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:17.931 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:18.140 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:18.256 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:18.452 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:18.659 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:18.871 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:19.086 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:19.198 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:19.397 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:19.608 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:19.829 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.030 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.139 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.342 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.548 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.759 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:20.979 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.084 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.279 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.480 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.685 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.886 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:21.994 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:22.206 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:22.405 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:22.606 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:22.810 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:22.917 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:23.127 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:23.341 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:23.552 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:23.754 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:23.862 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.061 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.283 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.485 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.689 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.794 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:24.989 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:25.187 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:25.389 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:25.604 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:25.707 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:25.914 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:26.137 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:26.337 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:26.542 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:26.660 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:26.857 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.059 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.262 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.463 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.571 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.769 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:27.963 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:28.162 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:28.368 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:28.481 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:28.677 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:28.874 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.074 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.277 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.385 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.583 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.789 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:29.998 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:30.202 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:30.310 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:30.516 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:30.721 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:30.922 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:31.145 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:31.252 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:31.457 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:31.659 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:31.864 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.069 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.177 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.381 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.587 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.788 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:32.991 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:33.098 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:33.295 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:33.498 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:33.704 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:33.908 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.013 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.210 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.413 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.614 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.812 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:34.918 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:35.115 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:35.337 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:35.540 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:35.763 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:35.871 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:36.067 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:36.291 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:36.495 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:36.707 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:36.819 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.016 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.215 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.419 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.630 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.737 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:37.939 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:38.139 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:38.340 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:38.547 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:38.659 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:38.866 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.069 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.275 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.481 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.587 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.785 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:39.999 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:40.201 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:40.405 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:40.512 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:40.712 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:40.923 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:41.127 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:41.348 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:41.463 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:41.672 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:41.876 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:42.079 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:42.279 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:42.388 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:42.599 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:42.806 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.009 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.216 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.324 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.526 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.734 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:43.935 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:44.141 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:44.247 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:44.450 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:44.650 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:44.852 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:45.065 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:45.170 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:45.372 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:45.591 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:45.797 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.003 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.113 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.310 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.523 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.738 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:46.961 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.067 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.275 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.482 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.684 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.884 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:47.997 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:48.198 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:48.395 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:48.594 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:48.812 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:48.919 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:49.115 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:49.317 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:49.520 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:49.725 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:49.830 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.027 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.222 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.425 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.625 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.731 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:50.927 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:51.129 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:51.331 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:51.556 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:51.665 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:51.869 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:52.075 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:52.295 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:52.502 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:52.610 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:52.614 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-0.pt
+2026-07-01 10:37:52.616 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-82.pt
+2026-07-01 10:37:52.857 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:53.062 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:53.266 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:53.468 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:53.577 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:53.581 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-82.pt
+2026-07-01 10:37:53.583 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-83.pt
+2026-07-01 10:37:53.812 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.009 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.207 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.411 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.519 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.523 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-83.pt
+2026-07-01 10:37:54.526 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-84.pt
+2026-07-01 10:37:54.753 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:54.950 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:55.151 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:55.354 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:55.463 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:55.466 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-84.pt
+2026-07-01 10:37:55.469 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-85.pt
+2026-07-01 10:37:55.695 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:55.900 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:56.124 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:56.330 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:56.435 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:56.439 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-85.pt
+2026-07-01 10:37:56.441 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-86.pt
+2026-07-01 10:37:56.664 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:56.869 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:57.079 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:57.299 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:57.416 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:57.431 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-86.pt
+2026-07-01 10:37:57.436 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-87.pt
+2026-07-01 10:37:57.687 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:57.887 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:58.089 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:58.290 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:58.396 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:58.400 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-87.pt
+2026-07-01 10:37:58.402 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-88.pt
+2026-07-01 10:37:58.625 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:58.838 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.038 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.242 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.349 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.353 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-88.pt
+2026-07-01 10:37:59.356 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-89.pt
+2026-07-01 10:37:59.583 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.788 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:37:59.996 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:00.201 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:00.307 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:00.310 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-89.pt
+2026-07-01 10:38:00.313 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-90.pt
+2026-07-01 10:38:00.558 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:00.777 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:00.977 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:01.177 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:01.286 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:01.290 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-90.pt
+2026-07-01 10:38:01.292 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-91.pt
+2026-07-01 10:38:01.522 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:01.730 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:01.937 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:02.143 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:02.251 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:02.255 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-91.pt
+2026-07-01 10:38:02.257 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-92.pt
+2026-07-01 10:38:02.481 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:02.711 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:02.926 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:03.136 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:03.251 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:03.255 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-92.pt
+2026-07-01 10:38:03.258 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-93.pt
+2026-07-01 10:38:03.497 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:03.706 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:03.927 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:04.130 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:04.244 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:04.248 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-93.pt
+2026-07-01 10:38:04.251 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-94.pt
+2026-07-01 10:38:04.501 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:04.710 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:04.920 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:05.130 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:05.238 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:05.242 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-94.pt
+2026-07-01 10:38:05.245 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-95.pt
+2026-07-01 10:38:05.478 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:05.697 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:05.903 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:06.111 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:06.222 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:06.226 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-95.pt
+2026-07-01 10:38:06.229 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-96.pt
+2026-07-01 10:38:06.462 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:06.678 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:06.885 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:07.087 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:07.203 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:07.207 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-96.pt
+2026-07-01 10:38:07.210 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-97.pt
+2026-07-01 10:38:07.441 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:07.646 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:07.868 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:08.072 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:08.179 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:08.183 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-97.pt
+2026-07-01 10:38:08.186 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-98.pt
+2026-07-01 10:38:08.427 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:08.634 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:08.840 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:09.044 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:09.151 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:38:09.155 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-98.pt
+2026-07-01 10:38:09.158 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-99.pt
+2026-07-01 10:38:09.191 INFO: Training complete
+2026-07-01 10:38:09.191 INFO: 
+2026-07-01 10:38:09.191 INFO: ===========RESULTS===========
+2026-07-01 10:38:09.191 INFO: Computing metrics for training, validation, and test sets
+2026-07-01 10:38:09.192 INFO: Loading checkpoint: ./checkpoints/energies_forces_run-100_epoch-99.pt
+2026-07-01 10:38:09.252 INFO: Loaded Stage one model from epoch 99 for evaluation
+2026-07-01 10:38:09.253 INFO: Evaluating train ...
+2026-07-01 10:38:09.735 INFO: Evaluating valid ...
+2026-07-01 10:38:09.871 INFO: Error-table on TRAIN and VALID:
++-------------+----------+----------+----------+----------+
+| config_type |  MAE E   |  MAE F   | MAE nacs | MAE socs |
++-------------+----------+----------+----------+----------+
+|    train    |    590.3 |   3795.5 |      N/A |      N/A |
+|    valid    |    515.4 |   3698.3 |      N/A |      N/A |
++-------------+----------+----------+----------+----------+
+2026-07-01 10:38:09.871 INFO: Saving model to checkpoints/energies_forces_run-100.model
+2026-07-01 10:38:09.955 INFO: Compiling model, saving metadata to energies_forces_compiled.model
+2026-07-01 10:38:10.536 INFO: Done
+2026-07-01 10:46:28.301 INFO: ===========VERIFYING SETTINGS===========
+2026-07-01 10:46:28.301 INFO: MACE version: 0.3.6
+2026-07-01 10:46:28.301 DEBUG: Configuration: Namespace(name='energies_forces', seed=100, work_dir='.', nacs_key='smooth_nacs', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, log_level='INFO', n_energies=4, error_table='EnergyNacsDipoleMAE', model='AutoencoderExcitedMACE', r_max=5.0, num_permutational_invariant=16, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='128x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_dipoles=True, compute_nacs=False, compute_socs=False, train_file='SINGLET_SOC_ALL.xyz', valid_file=None, valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipoles_key='REF_dipoles', charges_key='REF_charges', loss='weighted', forces_weight=100.0, nacs_weight=100.0, socs_weight=100.0, soc_num=None, nac_num=None, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipoles_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.0001, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, ema=True, ema_decay=0.99, max_num_epochs=100, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'])
+2026-07-01 10:46:28.351 INFO: CUDA version: 11.8, CUDA device: 0
+2026-07-01 10:46:28.391 DEBUG: Popen(['git', 'version'], cwd=/home/yutong/X-MACE/tutorials, stdin=None, shell=False, universal_newlines=False)
+2026-07-01 10:46:28.395 DEBUG: Popen(['git', 'version'], cwd=/home/yutong/X-MACE/tutorials, stdin=None, shell=False, universal_newlines=False)
+2026-07-01 10:46:28.398 DEBUG: sys.platform='linux', git_executable='git'
+2026-07-01 10:46:28.399 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/yutong/X-MACE, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-07-01 10:46:28.402 DEBUG: Current Git commit: ef57fb0b2c0da701ab86dbcc086af1946e7e8ee1
+2026-07-01 10:46:28.402 INFO: 
+2026-07-01 10:46:28.402 INFO: ===========LOADING INPUT DATA===========
+2026-07-01 10:46:28.576 INFO: Using random 10% of training set for validation with following indices: [39, 47, 4, 43, 24]
+2026-07-01 10:46:28.576 WARNING: Validation batch size (10) is larger than the number of validation data (5)
+2026-07-01 10:46:28.576 INFO: Atomic Numbers used: [np.int64(1)]
+2026-07-01 10:46:28.576 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-07-01 10:46:28.576 INFO: Computing average Atomic Energies using least squares regression
+2026-07-01 10:46:28.577 INFO: Atomic Energies used (z: eV): {1: -1003.9330823714266}
+2026-07-01 10:46:28.605 INFO: 
+2026-07-01 10:46:28.605 INFO: ===========MODEL DETAILS===========
+2026-07-01 10:46:30.209 INFO: Average number of neighbors: 15.6
+2026-07-01 10:46:30.209 INFO: During training the following quantities will be reported: energy, forces, dipoles, nacs
+2026-07-01 10:46:30.219 INFO: Building model
+2026-07-01 10:46:30.219 INFO: Message passing with 128 channels and max_L=1 (128x0e + 128x1o)
+2026-07-01 10:46:30.219 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-07-01 10:46:30.219 INFO: 8 radial and 5 basis functions
+2026-07-01 10:46:30.219 INFO: Radial cutoff: 5.0 Å (total receptive field for each atom: 10.0 Å)
+2026-07-01 10:46:30.219 INFO: Distance transform for radial basis functions: None
+2026-07-01 10:46:31.743 DEBUG: AutoencoderExcitedMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(1x0e -> 128x0e | 128 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=5.0, num_basis=8, trainable=False)
+    (cutoff_fn): PolynomialCutoff(p=5.0, r_max=5.0)
+  )
+  (perm_encoder): PermutationInvariantEncoder(
+    (elementwise_nn): Sequential(
+      (0): Linear(in_features=1, out_features=16, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=16, out_features=16, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=16, out_features=16, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=16, out_features=16, bias=True)
+      (7): ELU(alpha=1.0)
+    )
+    (post_aggregation_nn): Sequential(
+      (0): Linear(in_features=16, out_features=16, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=16, out_features=16, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=16, out_features=16, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=16, out_features=16, bias=True)
+    )
+  )
+  (perm_decoder): PermutationInvariantDecoder(
+    (decoder_nn): Sequential(
+      (0): Linear(in_features=16, out_features=128, bias=True)
+      (1): ELU(alpha=1.0)
+      (2): Linear(in_features=128, out_features=128, bias=True)
+      (3): ELU(alpha=1.0)
+      (4): Linear(in_features=128, out_features=128, bias=True)
+      (5): ELU(alpha=1.0)
+      (6): Linear(in_features=128, out_features=128, bias=True)
+      (7): ELU(alpha=1.0)
+      (8): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[-1003.9331])
+  (interactions): ModuleList(
+    (0): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e x 1x0e -> 128x0e+128x1o | 16384 paths | 16384 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o -> 128x0e+128x1o | 32768 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o x 1x0e+1x1o+1x2e+1x3o -> 256x0e+384x1o+384x2e+256x3o | 1280 paths | 1280 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 1280]
+      (linear): Linear(256x0e+384x1o+384x2e+256x3o -> 128x0e+128x1o+128x2e+128x3o | 163840 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o x 1x0e -> 128x0e | 16384 paths | 16384 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o -> 128x0e+128x1o | 32768 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float32 of size 1x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float32 of size 1x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e -> 128x0e | 16384 weights)
+    )
+  )
+  (socs_readouts): ModuleList(
+    (0-1): 2 x None
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o -> 4x0e | 512 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 128x0e | 16384 weights)
+      (non_linearity): Activation [x] (128x0e -> 128x0e)
+      (linear_2): Linear(128x0e -> 4x0e | 512 weights)
+    )
+  )
+  (invariant_readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o -> 16x0e | 2048 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 128x0e | 16384 weights)
+      (non_linearity): Activation [x] (128x0e -> 128x0e)
+      (linear_2): Linear(128x0e -> 16x0e | 2048 weights)
+    )
+  )
+)
+2026-07-01 10:46:31.746 INFO: Total number of parameters: 599703
+2026-07-01 10:46:31.753 INFO: 
+2026-07-01 10:46:31.754 INFO: ===========OPTIMIZER INFORMATION===========
+2026-07-01 10:46:31.754 INFO: Using ADAM as parameter optimizer
+2026-07-01 10:46:31.754 INFO: Batch size: 10
+2026-07-01 10:46:31.754 INFO: Using Exponential Moving Average with decay: 0.99
+2026-07-01 10:46:31.754 INFO: Number of gradient updates: 450
+2026-07-01 10:46:31.754 INFO: Learning rate: 0.0001, weight decay: 5e-07
+2026-07-01 10:46:31.754 INFO: InvariantsWeightedEnergyForcesNacsDipoleLoss(energy_weight=100.000, forces_weight=100.000, dipole_weight=1.000)
+2026-07-01 10:46:31.756 INFO: Using gradient clipping with tolerance=10.000
+2026-07-01 10:46:31.756 INFO: 
+2026-07-01 10:46:31.756 INFO: ===========TRAINING===========
+2026-07-01 10:46:31.756 INFO: Started training, reporting errors on validation set
+2026-07-01 10:46:31.756 INFO: Loss metrics on validation set
+2026-07-01 10:46:33.068 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:36.674 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:41.876 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:47.294 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:48.629 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:48.751 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:48.755 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-0.pt
+2026-07-01 10:46:49.018 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:49.267 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:49.494 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:49.717 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:49.838 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:50.060 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:50.275 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:50.500 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:50.730 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:50.857 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:51.076 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:51.293 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:51.515 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:51.735 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:51.861 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:52.080 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:52.299 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:52.526 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:52.751 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:52.877 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:53.101 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:53.329 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:53.563 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:53.788 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:53.909 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:54.132 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:54.368 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:54.605 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:54.833 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:54.956 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:55.176 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:55.400 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:55.625 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:55.847 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:55.964 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:56.179 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:56.394 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:56.617 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:56.840 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:56.958 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:57.170 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:57.386 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:57.609 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:57.832 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:57.949 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:58.164 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:58.394 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:58.621 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:58.845 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:58.968 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:59.185 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:59.406 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:59.629 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:59.853 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:46:59.981 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:00.199 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:00.417 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:00.633 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:00.859 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:00.986 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:01.203 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:01.421 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:01.635 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:01.855 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:01.973 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:02.184 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:02.402 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:02.636 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:02.853 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:02.977 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:03.186 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:03.414 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:03.641 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:03.861 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:03.992 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:04.205 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:04.441 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:04.665 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:04.886 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:05.007 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:05.228 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:05.445 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:05.667 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:05.891 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:06.011 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:06.225 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:06.447 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:06.660 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:06.880 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:07.008 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:07.223 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:07.433 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:07.655 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:07.874 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:08.002 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:08.219 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:08.437 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:08.661 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:08.884 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:09.001 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:09.216 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:09.443 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:09.665 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:09.889 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:10.007 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:10.222 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:10.439 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:10.661 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:10.893 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:11.019 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:11.238 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:11.456 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:11.688 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:11.929 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:12.052 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:12.277 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:12.519 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:12.736 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:12.958 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:13.075 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:13.289 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:13.507 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:13.732 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:13.955 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:14.072 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:14.281 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:14.522 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:14.749 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:14.972 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:15.094 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:15.317 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:15.545 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:15.776 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:15.998 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:16.121 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:16.339 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:16.554 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:16.773 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:16.991 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:17.108 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:17.325 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:17.540 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:17.764 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:17.998 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:18.122 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:18.342 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:18.572 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:18.800 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:19.033 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:19.154 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:19.373 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:19.608 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:19.825 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:20.048 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:20.165 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:20.382 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:20.604 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:20.828 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:21.050 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:21.170 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:21.393 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:21.615 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:21.842 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:22.065 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:22.184 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:22.404 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:22.625 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:22.846 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:23.072 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:23.195 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:23.414 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:23.641 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:23.873 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:24.098 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:24.226 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:24.449 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:24.694 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:24.916 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:25.141 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:25.263 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:25.481 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:25.705 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:25.930 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:26.156 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:26.281 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:26.498 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:26.711 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:26.931 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:27.161 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:27.276 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:27.497 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:27.722 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:27.949 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:28.170 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:28.288 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:28.507 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:28.731 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:28.965 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:29.181 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:29.298 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:29.514 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:29.743 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:29.960 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:30.183 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:30.303 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:30.522 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:30.736 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:30.949 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:31.167 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:31.289 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:31.497 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:31.710 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:31.931 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:32.148 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:32.261 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:32.471 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:32.687 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:32.899 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:33.112 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:33.225 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:33.438 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:33.650 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:33.864 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:34.080 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:34.193 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:34.401 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:34.613 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:34.838 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:35.053 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:35.168 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:35.378 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:35.593 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:35.807 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.021 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.132 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.340 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.549 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.762 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:36.975 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:37.091 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:37.312 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:37.523 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:37.740 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:37.951 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:38.059 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:38.262 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:38.475 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:38.691 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:38.907 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:39.023 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:39.226 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:39.450 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:39.679 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:39.909 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.017 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.224 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.433 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.638 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.860 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:40.983 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:41.194 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:41.408 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:41.629 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:41.843 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:41.967 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:42.176 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:42.389 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:42.606 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:42.819 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:42.932 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:43.139 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:43.355 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:43.577 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:43.792 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:43.903 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:44.119 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:44.332 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:44.540 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:44.755 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:44.887 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:45.096 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:45.314 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:45.525 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:45.736 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:45.845 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:46.049 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:46.262 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:46.475 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:46.691 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:46.803 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.012 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.226 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.439 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.652 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.762 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:47.968 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:48.179 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:48.396 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:48.606 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:48.717 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:48.938 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:49.152 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:49.386 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:49.607 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:49.725 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:49.939 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:50.173 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:50.384 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:50.616 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:50.730 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:50.938 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:51.163 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:51.386 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:51.615 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:51.730 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:51.942 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:52.163 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:52.380 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:52.598 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:52.715 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:52.926 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:53.146 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:53.360 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:53.571 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:53.685 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:53.897 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:54.109 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:54.321 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:54.538 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:54.651 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:54.860 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:55.076 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:55.307 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:55.531 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:55.645 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:55.855 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:56.070 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:56.291 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:56.513 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:56.620 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:56.830 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:57.051 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:57.263 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:57.485 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:57.603 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:57.813 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:58.030 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:58.240 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:58.482 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:58.593 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:58.802 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:59.024 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:59.243 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:59.460 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:59.578 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:47:59.792 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.006 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.222 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.433 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.547 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.758 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:00.971 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:01.186 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:01.399 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:01.511 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:01.722 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:01.937 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:02.149 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:02.363 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:02.476 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:02.685 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:02.899 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:03.114 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:03.338 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:03.469 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:03.680 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:03.897 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:04.109 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:04.323 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:04.430 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:04.633 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:04.839 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:05.050 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:05.266 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:05.379 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:05.587 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:05.793 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.005 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.219 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.329 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.543 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.758 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:06.972 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:07.184 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:07.291 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:07.495 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:07.699 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:07.919 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:08.136 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:08.250 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:08.459 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:08.683 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:08.897 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:09.110 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:09.225 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:09.434 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:09.659 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:09.874 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:10.097 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:10.208 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:10.213 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-0.pt
+2026-07-01 10:48:10.215 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-82.pt
+2026-07-01 10:48:10.468 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:10.686 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:10.896 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:11.109 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:11.223 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:11.227 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-82.pt
+2026-07-01 10:48:11.230 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-83.pt
+2026-07-01 10:48:11.462 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:11.677 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:11.891 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:12.105 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:12.218 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:12.223 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-83.pt
+2026-07-01 10:48:12.225 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-84.pt
+2026-07-01 10:48:12.468 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:12.686 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:12.895 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:13.105 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:13.218 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:13.222 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-84.pt
+2026-07-01 10:48:13.225 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-85.pt
+2026-07-01 10:48:13.468 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:13.686 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:13.900 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:14.120 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:14.231 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:14.235 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-85.pt
+2026-07-01 10:48:14.238 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-86.pt
+2026-07-01 10:48:14.471 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:14.684 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:14.901 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:15.111 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:15.219 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:15.223 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-86.pt
+2026-07-01 10:48:15.226 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-87.pt
+2026-07-01 10:48:15.471 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:15.682 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:15.904 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:16.122 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:16.242 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:16.246 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-87.pt
+2026-07-01 10:48:16.249 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-88.pt
+2026-07-01 10:48:16.495 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:16.707 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:16.920 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:17.132 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:17.248 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:17.252 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-88.pt
+2026-07-01 10:48:17.255 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-89.pt
+2026-07-01 10:48:17.497 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:17.713 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:17.929 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:18.146 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:18.257 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:18.261 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-89.pt
+2026-07-01 10:48:18.263 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-90.pt
+2026-07-01 10:48:18.498 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:18.729 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:18.942 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:19.153 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:19.269 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:19.273 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-90.pt
+2026-07-01 10:48:19.276 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-91.pt
+2026-07-01 10:48:19.512 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:19.726 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:19.954 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:20.166 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:20.278 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:20.281 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-91.pt
+2026-07-01 10:48:20.284 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-92.pt
+2026-07-01 10:48:20.527 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:20.739 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:20.950 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:21.164 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:21.278 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:21.283 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-92.pt
+2026-07-01 10:48:21.285 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-93.pt
+2026-07-01 10:48:21.518 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:21.730 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:21.954 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:22.160 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:22.271 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:22.275 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-93.pt
+2026-07-01 10:48:22.278 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-94.pt
+2026-07-01 10:48:22.524 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:22.735 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:22.952 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:23.166 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:23.276 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:23.279 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-94.pt
+2026-07-01 10:48:23.282 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-95.pt
+2026-07-01 10:48:23.524 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:23.756 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:23.969 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:24.183 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:24.294 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:24.297 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-95.pt
+2026-07-01 10:48:24.300 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-96.pt
+2026-07-01 10:48:24.541 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:24.755 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:24.969 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:25.183 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:25.293 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:25.297 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-96.pt
+2026-07-01 10:48:25.301 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-97.pt
+2026-07-01 10:48:25.538 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:25.751 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:25.962 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:26.176 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:26.288 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:26.292 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-97.pt
+2026-07-01 10:48:26.295 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-98.pt
+2026-07-01 10:48:26.537 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:26.750 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:26.972 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:27.159 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:27.247 DEBUG: Saving info: ./results/energies_forces_run-100_train.txt
+2026-07-01 10:48:27.250 DEBUG: Deleting old checkpoint file: ./checkpoints/energies_forces_run-100_epoch-98.pt
+2026-07-01 10:48:27.251 DEBUG: Saving checkpoint: ./checkpoints/energies_forces_run-100_epoch-99.pt
+2026-07-01 10:48:27.286 INFO: Training complete
+2026-07-01 10:48:27.287 INFO: 
+2026-07-01 10:48:27.287 INFO: ===========RESULTS===========
+2026-07-01 10:48:27.287 INFO: Computing metrics for training, validation, and test sets
+2026-07-01 10:48:27.287 INFO: Loading checkpoint: ./checkpoints/energies_forces_run-100_epoch-99.pt
+2026-07-01 10:48:27.351 INFO: Loaded Stage one model from epoch 99 for evaluation
+2026-07-01 10:48:27.352 INFO: Evaluating train ...
+2026-07-01 10:48:27.841 INFO: Evaluating valid ...
+2026-07-01 10:48:27.971 INFO: Error-table on TRAIN and VALID:
++-------------+----------+----------+----------+----------+
+| config_type |  MAE E   |  MAE F   | MAE nacs | MAE socs |
++-------------+----------+----------+----------+----------+
+|    train    |    589.7 |   3795.3 |      N/A |      N/A |
+|    valid    |    513.6 |   3698.0 |      N/A |      N/A |
++-------------+----------+----------+----------+----------+
+2026-07-01 10:48:27.971 INFO: Saving model to checkpoints/energies_forces_run-100.model
+2026-07-01 10:48:28.060 INFO: Compiling model, saving metadata to energies_forces_compiled.model
+2026-07-01 10:48:28.600 INFO: Done
