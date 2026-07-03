@@ -1,0 +1,4 @@
+{
+  "strategy_1_naive_test_loss": 21.646194609920535,
+  "strategy_2_frozen_gnn_test_loss": 42.30090730380168
+}

@@ -1,0 +1,14 @@
+{
+  "before_transfer": {
+    "transfer_train": 105.64383188883464,
+    "holdout": 108.88704565297003
+  },
+  "after_transfer": {
+    "transfer_train": 65.1348139444987,
+    "holdout": 94.80459511798361
+  },
+  "delta_after_minus_before": {
+    "transfer_train": -40.50901794433594,
+    "holdout": -14.082450534986421
+  }
+}
