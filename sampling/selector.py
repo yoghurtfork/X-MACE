@@ -25,6 +25,7 @@ def furthest_point_sampling(descriptor_matrix, n_to_select, initialize=0):
     """
     n_samples = descriptor_matrix.shape[0]
     
+    # skmatter FPS implementation does not handle 1D descriptor matrices, so we need to implement a custom version for that case
     if descriptor_matrix.shape[1] < 2:
         # 1D case: flatten descriptor_matrix to 1D for proper distance calculations
         descriptors_1d = descriptor_matrix.flatten()
