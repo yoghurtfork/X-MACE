@@ -3,7 +3,7 @@ from ase.neighborlist import NeighborList, natural_cutoffs
 
 def get_descriptor(descriptor_type, atoms):
     """
-    Router function that routes to the appropriate descriptor function. 
+    Router to the appropriate descriptor function. 
         - "bond_lengths": C-C bond lengths
         - "bond_angles": C-C-C bond angles
     """
